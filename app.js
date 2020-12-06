@@ -1,14 +1,20 @@
 /*
-//importar el módulo (paquete)
+Fs = file system
+importar el módulo (paquete)
+·Con const fs declaramos una constante que hará referencia al modulo fs
 const fs = require('fs');
-
+·Aplicacion para generar tablas de multiplicar
+·Declaramos base y altura
 let base = 5;
 let data = "";
-
+·Declaramos un for 
 for (let i = 1; i <= 10; i++) {
+    ·Usamos += para concatenar una cadena con algo mas
     data += `${base} x ${i} = ${base * i} \n`;
 }
-
+·Con fs.write podremos crear un archivo txt
+·Con err estamos declarando un callback para que al momento que reciba un
+·error nos traiga algo
 fs.writeFile(`tabla-${base}.txt`, data, (err) => {
     if (err) throw err;
     console.log(`El archivo tabla-${base}.txt ha sido creado`);
